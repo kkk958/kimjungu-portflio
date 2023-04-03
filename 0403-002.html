@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹반응 미디어쿼리</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        #wrapper {
+            width: 100%px;
+            height: 500px;
+            background: yellow;
+            margin: 0 auto;
+        }
+        h1 {
+            margin: 0;
+            text-align: center;
+        }
+        @media(min-width: 1250px){
+        #wrapper{
+            width: 80%;
+            height: 600px;
+            background: dodgerblue;
+        }
+        h1{
+            font-size: 24px;
+            color: #fff;
+        }
+    }
+        @media(max-width: 700px){
+            #wrapper{
+                width: 80%;
+                height: 600px;
+                background: green;
+            }
+            h1{
+                font-size: 24px;
+                color: #fff;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <h1>RESPONSIVE</h1>
+    </div>
+</body>
+</html>
