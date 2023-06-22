@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+    <link rel="stylesheet" href="평가.css">
+    <script src="https://kit.fontawesome.com/b557696b17.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.cdnfonts.com/css/tiro-devanagari-marathi" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script>
+    window.addEventListener('scroll', function() {
+        var sidebar = document.getElementById('sidebar');
+        var startPosition = 845; 
+        var currentScroll = window.pageYOffset || document.documentElement.scrollTop; 
+
+        if (currentScroll >= startPosition) {
+                sidebar.style.position = 'fixed'; 
+                sidebar.style.top = '0'; 
+        } else {
+                 sidebar.style.position = 'static'; 
+        }
+    });
+
+    window.onload = function() {
+        const kindWrap =  document.querySelector('.kind_wrap');
+        const slider = kindWrap.querySelector('.slider');
+        const slideLis = slider.querySelectorAll('li')
+        const moveButton = kindWrap.querySelector('.arrow');
+        const liWidth = slideLis[0].clientWidth;
+        const sliderWidth = liWidth * slideLis.length;
+    slider.style.width = `${sliderWidth}px` ;
+
+        let currentIdx = 0;
+        let translate = 0;
+        moveButton.addEventListener('click', moveSlide);
+
+    function moveSlide(event) {
+        event.preventDefault();
+            if (event.target.className === 'next') {
+            if (currentIdx !== slideLis.length -1) {
+                translate -= liWidth;
+        slider.style.transform = `translateX(${translate}px)`;
+        currentIdx += 1;
+        }
+        } else if (event.target.className === 'prev') {
+            if (currentIdx !== 0) {
+                translate += liWidth;
+                slider.style.transform = `translateX(${translate}px)`;
+                currentIdx -= 1;
+            }
+        }
+    }
+
+}
+    </script>
+</head>
+<body>
+    <div id="main">
+        <div class="header"><img src="background.png" alt=""><p>WesTonb<br>Blos & drink</p></div> 
+    </div>
+   
+    <div id="section_1">
+        <div id="sidebar">
+            <i class="fa-solid fa-bars"></i>
+            <li class="About">About</li>
+            <li class="Cocktail">Cocktail</li>
+            <li class="Dinner">Dinner</li>
+        </div>
+        <p class="title">The Wolrd's Forest Wisky</p>
+        <div class="line"></div>
+        <div class="content_1"></div>
+        <p class="subtitle">Cocktails Ready to Enjoy</p>
+        <div class="content_2"></div>
+        <div class="view_bar"><p>VIEW ALL COCKTALS</p></div>
+    </div>
+    <div id="section_2">
+        <img src="섹션2 배경.png">
+        <h1>Cocktails Moments</h1>
+        <div class="content_1">
+            <div class="box1">
+                <div class="line"></div>
+                <div class="text">
+                <h2>(After) Dinner</h2>
+                <h5>Share those intimate dinner moments whith friends and cocktails</h5>
+            </div>
+            </div>
+        </div>
+        <div class="content_2">
+            <div class="box2">
+                <div class="line"></div>
+                <div class="text">
+                <h2>8 delicious Easter cocktails</h2>
+                <h5>Here are 8 Easter cocktail ideas that will surely Be crowd favorites</h5>
+            </div>
+            </div>
+        </div>
+        <div class="moments_bar">
+            <h5>DESCOVER ALL COCKTAIL MOMENTS</h5>
+        </div>
+    </div>
+    <div id="section_3">
+        <h1>Explore the Cocktails Range</h1>
+        <div class="kind_wrap">
+            <div class="kind_slider">
+              <ul class="slider">
+                  <li><img src="red-iced-cocktail-table.jpg" alt=""></li>
+                  <li><img src="kiwi-fruit-cocktail-martini-glass-garnished-with-apple-slices-bamboo-skewer.jpg" alt=""></li>
+                  <li><img src="glass-fresh-cocktail-copy-space.jpg" alt=""></li>
+              </ul>
+            </div>
+            <div class="arrow">
+                <a href="" class="prev">▶</a>
+                <a href="" class="next">▶</a>
+            </div>
+          </div>
+    <div id="section_4">
+        <h1>Weston Cocktails on Instagram</h1>
+        <ul>
+            <li class="box1"></li>
+            <h2>@Waston cocktails</h4>
+            <li class="box2"></li>
+            <h3>@Waston cocktails</h4>
+            <li class="box3"></li>
+            <h4>@Waston cocktails</h4>
+            <li class="box4"></li>
+            <h5>@Waston cocktails</h4>
+        </ul>
+        <p class="follow_box">
+            <span>FOLLOW WASTON ON INSTAGRAM</span>
+        </p>
+        </div>
+    </div>
+    <div id="footer">
+        <ul class="title_1">
+            <h1>ACCOUNT</h1>
+            <li>Profiles</li>
+            <li>Orders</li>
+            <li>Courses</li>
+            <li>Support</li>
+        </ul>
+        <ul class="title_2">
+            <h1>SOCIAL MEDIA</h1>
+            <li>Instagram</li>
+            <li>Youtube</li>
+            <li>Pinterest</li>
+            <li>Facebook</li>
+        </ul>
+        <ul class="asd">
+            <li>Disclaimer</li>
+            <li>Terms & Conditions</li>
+            <li>Privacy Policy</li>
+        </ul>
+        <p class="up">➯</p>
+    </div>
+</body>
+</html>
